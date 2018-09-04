@@ -14,7 +14,8 @@ namespace FileData
         {
             if (!Validate(args))
             {
-                Console.WriteLine("Invalid args supplied");
+                Console.WriteLine("Invalid arguments supplied");
+                Console.ReadLine();
                 return;
             }
 
@@ -22,6 +23,8 @@ namespace FileData
             if (!Bootstrapper.Init(out app))
             {
                 Console.WriteLine("Error while starting up the app, please contact support");
+                Console.ReadLine();
+                return;
             }
 
             try
