@@ -49,12 +49,12 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Integration\Tests.cs" />
-    <Compile Include="MockConfiguraionService.cs" />
-    <Compile Include="MockFileAttributeService.cs" />
+    <Compile Include="Mocks\MockConfiguraionService.cs" />
+    <Compile Include="Mocks\MockFileAttributeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Unit\SizeQueryableTests.cs" />
-    <Compile Include="Unit\VersionQueryableTests.cs" />
+    <Compile Include="SizeQueryableTests.cs" />
+    <Compile Include="AppTests.cs" />
+    <Compile Include="VersionQueryableTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

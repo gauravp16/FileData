@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using FileData.Services;
+﻿using FileData.Services;
 
 namespace FileData.Tests
 {

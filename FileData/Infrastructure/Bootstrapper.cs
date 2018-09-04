@@ -55,10 +55,5 @@ namespace FileData.Infrastructure
 
             return builder.Build();
         }
-
-        private static object ConfigurationService()
-        {
-            throw new NotImplementedException();
-        }
     }
 }
