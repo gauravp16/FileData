@@ -20,6 +20,9 @@ namespace FileData
             if(string.IsNullOrEmpty(file))
                 throw new ArgumentException("Invalid file path");
 
+            if (string.IsNullOrEmpty(parameter))
+                throw new ArgumentException("Invalid functionality");
+
             foreach (var queryable in _fileAttributeQueryables)
             {
                 if (queryable.IsApplicable(parameter))

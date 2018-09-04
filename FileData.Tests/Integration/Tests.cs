@@ -52,12 +52,17 @@ namespace FileData.Tests.Integration
             _app.Query(null, "-s");
         }
 
+        [DataTestMethod]
+        [DataRow("")]
+        [DataRow("ghhgh")]
         [TestMethod]
         [ExpectedException(typeof(ArgumentException))]
-        public void Should_Throw_Error_With_Meaningful_Message_Invalid_Input()
+        public void Should_Throw_Error_With_Meaningful_Message_Invalid_Input(string input)
         {
-            _app.Query("c:\test.txt", "-ghhgh");
+            _app.Query("c:\test.txt", input);
         }
+
+        
 
     }
 }

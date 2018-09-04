@@ -12,6 +12,12 @@ namespace FileData
 
         public static void Main(string[] args)
         {
+            if (!Validate(args))
+            {
+                Console.WriteLine("Invalid args supplied");
+                return;
+            }
+
             App app;
             if (!Bootstrapper.Initialize(out app))
             {
@@ -29,6 +35,14 @@ namespace FileData
                 Log.Error("Error while getting the file attribute", ex);
                 Console.WriteLine(string.Format("Error : {0}", ex.Message));
             }
+        }
+
+        private static bool Validate(string[] args)
+        {
+            if (args == null || args.Length != 2)
+                return false;
+
+            return true;
         }
     }
 }
