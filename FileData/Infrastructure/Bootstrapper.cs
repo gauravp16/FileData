@@ -1,8 +1,6 @@
 ﻿using System;
 using Autofac;
-using FileData.Services;
 using log4net;
-using ThirdPartyTools;
 
 namespace FileData.Infrastructure
 {
@@ -46,13 +44,8 @@ namespace FileData.Infrastructure
         private static IContainer InitialiseContainer()
         {
             var builder = new ContainerBuilder();
-            builder.RegisterType<FileAttributeService>().AsImplementedInterfaces();
-            builder.RegisterType<ConfigurationService>().AsImplementedInterfaces();
-            builder.RegisterType<SizeQueryable>().As<FileAttribueQueryable>();
-            builder.RegisterType<VersionQueryable>().As<FileAttribueQueryable>();
-            builder.RegisterType<FileDetails>().AsSelf();
-            builder.RegisterType<App>().AsSelf();
 
+            builder.RegisterModule(new FileDataModule());
             return builder.Build();
         }
     }

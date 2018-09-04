@@ -1,4 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Autofac;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
 namespace FileData.Tests.Integration
@@ -9,15 +14,15 @@ namespace FileData.Tests.Integration
         private App _app;
 
         [TestInitialize]
-        public void Initialise()
+        public void Setup()
         {
-            _app = new App(new FileAttribueQueryable[] 
-            {
-                new SizeQueryable(new MockFileAttributeService(), new MockConfiguraionService()),
-                new VersionQueryable(new MockFileAttributeService(), new MockConfiguraionService())
-            });
+            var builder = new ContainerBuilder();
+
+            builder.RegisterModule(new TestModule());
+
+            _app = builder.Build().Resolve<App>();
         }
-        
+
         [DataTestMethod]
         [DataRow("-s")]
         [DataRow("--s")]
@@ -53,5 +58,6 @@ namespace FileData.Tests.Integration
         {
             _app.Query("c:\test.txt", "-ghhgh");
         }
+
     }
 }

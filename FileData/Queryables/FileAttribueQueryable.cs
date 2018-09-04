@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace FileData
+namespace FileData.Queryables
 {
     /// <summary> 
     ///Abstract definition of file queryable that could be extended in future for

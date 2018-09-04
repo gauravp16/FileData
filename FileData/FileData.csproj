@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="Infrastructure\Bootstrapper.cs" />
+    <Compile Include="Infrastructure\FileDataModule .cs" />
     <Compile Include="Queryables\FileAttribueQueryable.cs" />
     <Compile Include="Services\ConfigurationService.cs" />
     <Compile Include="Services\FileAttributeService.cs" />

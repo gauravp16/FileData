@@ -3,7 +3,7 @@ using System.Configuration;
 using System.Linq;
 using FileData.Services;
 
-namespace FileData
+namespace FileData.Queryables
 {
     /// <summary>
     /// Responsible for providing size of a file.

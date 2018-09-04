@@ -1,7 +1,7 @@
 ﻿using FileData.Services;
 using ThirdPartyTools;
 
-namespace FileData
+namespace FileData.Services
 {
     /// <summary>
     /// Responsible for getting the details out of third party api.
