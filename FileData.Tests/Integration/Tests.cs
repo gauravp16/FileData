@@ -13,8 +13,8 @@ namespace FileData.Tests.Integration
         {
             _app = new App(new FileAttribueQueryable[] 
             {
-                new SizeQueryable(new MockFileAttributeService()),
-                new VersionQueryable(new MockFileAttributeService())
+                new SizeQueryable(new MockFileAttributeService(), new MockConfiguraionService()),
+                new VersionQueryable(new MockFileAttributeService(), new MockConfiguraionService())
             });
         }
         

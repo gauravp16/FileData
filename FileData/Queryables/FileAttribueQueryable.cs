@@ -2,6 +2,10 @@
 
 namespace FileData
 {
+    /// <summary> 
+    ///Abstract definition of file queryable that could be extended in future for
+    ///a new file attribute without having to modify any existing classes.
+    /// </summary>
     public abstract class FileAttribueQueryable
     {
         public abstract bool IsApplicable(string pattern);

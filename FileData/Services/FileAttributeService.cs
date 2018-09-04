@@ -3,6 +3,9 @@ using ThirdPartyTools;
 
 namespace FileData
 {
+    /// <summary>
+    /// Responsible for getting the details out of third party api.
+    /// </summary>
     public class FileAttributeService : IFileAttributeService
     {
         private FileDetails _fileDetails;

@@ -5,6 +5,14 @@ namespace FileData.Tests.Unit
     [TestClass]
     public class SizeQueryableTests
     {
+        private SizeQueryable _sizeQueryable;
+
+        [TestInitialize]
+        public void Setup()
+        {
+            _sizeQueryable = new SizeQueryable(new MockFileAttributeService(), new MockConfiguraionService());
+        }
+
         [DataTestMethod]
         [DataRow("-v")]
         [DataRow("--ajdkfjdk")]
@@ -12,9 +20,7 @@ namespace FileData.Tests.Unit
         [DataRow("--hj")]
         public void Should_Return_False_If_Invalid_Pattern(string parameter)
         {
-            var sizeQueryable = new SizeQueryable(new MockFileAttributeService());
-
-            Assert.IsFalse(sizeQueryable.IsApplicable(parameter));
+            Assert.IsFalse(_sizeQueryable.IsApplicable(parameter));
         }
 
         [DataTestMethod]
@@ -24,9 +30,7 @@ namespace FileData.Tests.Unit
         [DataRow("--size")]
         public void Should_Return_True_If_Valid_Pattern(string parameter)
         {
-            var sizeQueryable = new SizeQueryable(new MockFileAttributeService());
-
-            Assert.IsTrue(sizeQueryable.IsApplicable(parameter));
+            Assert.IsTrue(_sizeQueryable.IsApplicable(parameter));
         }
 
         [DataTestMethod]
@@ -36,9 +40,7 @@ namespace FileData.Tests.Unit
         [DataRow("--size")]
         public void Should_Return_Size_If_Valid_Pattern(string parameter)
         {
-            var sizeQueryable = new SizeQueryable(new MockFileAttributeService());
-
-            Assert.AreEqual("100", sizeQueryable.Query("c:/test.txt", parameter));
+            Assert.AreEqual("100", _sizeQueryable.Query("c:/test.txt", parameter));
         }
     }
 }
