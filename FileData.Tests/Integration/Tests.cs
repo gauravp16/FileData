@@ -12,6 +12,7 @@ namespace FileData.Tests.Integration
     public class Tests
     {
         private App _app;
+        private const string FILE_PATH = "c:/test.txt";
 
         [TestInitialize]
         public void Setup()
@@ -30,7 +31,7 @@ namespace FileData.Tests.Integration
         [DataRow("--size")]
         public void Should_Return_Size_For_Valid_Size_Pattern(string sizeInput)
         {
-            var size = _app.Query("C:\test.txt", sizeInput);
+            var size = _app.Query(FILE_PATH, sizeInput);
             Assert.AreEqual("100", size);
         }
 
@@ -41,7 +42,7 @@ namespace FileData.Tests.Integration
         [DataRow("--version")]
         public void Should_Return_Version_For_Valid_Version_Pattern(string versionInput)
         {
-            var version = _app.Query("C:\test.txt", versionInput);
+            var version = _app.Query(FILE_PATH, versionInput);
             Assert.AreEqual("1.0", version);
         }
 
@@ -59,7 +60,7 @@ namespace FileData.Tests.Integration
         [ExpectedException(typeof(ArgumentException))]
         public void Should_Throw_Error_With_Meaningful_Message_Invalid_Input(string input)
         {
-            _app.Query("c:\test.txt", input);
+            _app.Query(FILE_PATH, input);
         }
 
         

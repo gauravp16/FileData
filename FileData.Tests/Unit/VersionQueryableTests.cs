@@ -39,7 +39,7 @@ namespace FileData.Tests.Unit
         [DataRow("--v")]
         [DataRow("/v")]
         [DataRow("--version")]
-        public void Should_Return_Size_If_Valid_Pattern(string parameter)
+        public void Should_Return_Version_If_Valid_Pattern(string parameter)
         {
             Assert.AreEqual("1.0", _versionQueryable.Query("c:/test.txt", parameter));
         }
