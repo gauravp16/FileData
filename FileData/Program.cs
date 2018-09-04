@@ -19,7 +19,7 @@ namespace FileData
             }
 
             App app;
-            if (!Bootstrapper.Initialize(out app))
+            if (!Bootstrapper.Init(out app))
             {
                 Console.WriteLine("Error while starting up the app, please contact support");
             }

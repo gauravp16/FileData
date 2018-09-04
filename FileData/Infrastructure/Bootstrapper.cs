@@ -11,7 +11,7 @@ namespace FileData.Infrastructure
     {
         private readonly static ILog Log = LogManager.GetLogger(typeof(Bootstrapper));
 
-        public static bool Initialize(out App app)
+        public static bool Init(out App app)
         {
             app = null;
 
